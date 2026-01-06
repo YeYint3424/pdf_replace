@@ -6,26 +6,29 @@ export const PdsDocument = ({ data }: { data: any }) => (
     <Page size="A4" style={styles.page}>
       {/* ================= HEADER ================= */}
       <View style={styles.header}>
-        <Text style={styles.title}>Pelanggan yang dihormati,</Text>
+        {/* LEFT SIDE */}
+        <View style={{ flex: 5 }}>
+          {/* Left takes twice as much space as right */}
+          <Text style={styles.title}>HELAIAN PENDEDAHAN PRODUK</Text>
+          <View style={styles.section}>
+            <Text style={styles.sectionTitle}>Pelanggan yang dihormati,</Text>
+            <Text style={styles.paragraph}>
+              Helaian Pendedahan Produk ini memberikan anda maklumat penting
+              tentang takaful keluarga anda.
+            </Text>
+            <Text style={styles.paragraph}>
+              Pelanggan lain telah membaca Helaian Pendedahan Produk ini dan
+              mendapati ia membantu;{" "}
+              <Text style={styles.bold}>anda harus membacanya juga</Text>.
+            </Text>
+          </View>
+        </View>
 
-        <View style={styles.rightHeader}>
+        {/* RIGHT SIDE */}
+        <View style={{ flex: 1, alignItems: "flex-end" }}>
           <Image src="/images/etiqa-logo.png" style={styles.logo} />
           <Text style={styles.issueDate}>Tarikh: {data.issueDate}</Text>
         </View>
-      </View>
-
-      {/* ================= INTRO ================= */}
-      <View style={styles.section}>
-        <Text style={styles.paragraph}>Pelanggan yang dihormati,</Text>
-        <Text style={styles.paragraph}>
-          Helaian Pendedahan Produk ini memberikan anda maklumat penting tentang
-          takaful keluarga anda.
-        </Text>
-        <Text style={styles.paragraph}>
-          Pelanggan lain telah membaca Helaian Pendedahan Produk ini dan
-          mendapati ia membantu;{" "}
-          <Text style={styles.bold}>anda harus membacanya juga</Text>.
-        </Text>
       </View>
 
       {/* ================= SECTION 1 ================= */}
@@ -44,6 +47,14 @@ export const PdsDocument = ({ data }: { data: any }) => (
           melindungi kematian disebabkan oleh semula jadi dan kemalangan dan
           manfaat ihsan.
         </Text>
+      </View>
+
+      <View style={styles.section}>
+        <View style={styles.sectionHeader}>
+          <Text style={styles.sectionTitle}>
+            Konsep-konsep Syariah yang diguna pakai{" "}
+          </Text>
+        </View>
         <Text style={styles.paragraph}>
           Tabarru', Wakalah, Ju'alah, Mudarabah, dan Hibah adalah konsep-konsep
           Syariah yang diguna pakai untuk pelan ini. Sila rujuk sijil untuk
@@ -62,15 +73,16 @@ export const PdsDocument = ({ data }: { data: any }) => (
           </Text>
         </View>
 
-        <Text style={styles.paragraph}>
-          Sebagai ilustrasi, untuk RM {data.contribution.amount}{" "}
-          {data.contribution.mode}, anda{" "}
-          <Text style={styles.bold}>
-            akan menerima perlindungan/manfaat takaful keluarga berikut.
-          </Text>
-        </Text>
-
         <View style={styles.table}>
+          <View style={styles.row}>
+            <Text style={styles.rowHeader}>
+              Sebagai ilustrasi, untuk RM {data.contribution.amount}{" "}
+              {data.contribution.mode}, anda{" "}
+              <Text style={styles.bold}>
+                akan menerima perlindungan/manfaat takaful keluarga berikut.
+              </Text>
+            </Text>
+          </View>
           <View style={styles.row}>
             <Text style={styles.cellNumber}>1</Text>
             <Text style={styles.cellLeft}>Manfaat Kematian</Text>
@@ -149,14 +161,14 @@ export const PdsDocument = ({ data }: { data: any }) => (
         </View>
 
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
+          <Text style={styles.contactTitle}>
             Jika anda mempunyai sebarang soalan atau memerlukan bantuan mengenai
             takaful keluarga anda, anda boleh:
           </Text>
 
           <View style={styles.contactGrid}>
             {/* Icon 1 - Phone */}
-            <View style={styles.contactItem}>
+            <View style={[styles.contactItem, { borderRightWidth: 1 }]}>
               <View style={styles.iconPlaceholder}>
                 <Image src="/images/phoneIcon.png" style={styles.logoIcon} />
               </View>
@@ -166,7 +178,7 @@ export const PdsDocument = ({ data }: { data: any }) => (
             </View>
 
             {/* Icon 2 - Website */}
-            <View style={styles.contactItem}>
+            <View style={[styles.contactItem, { borderRightWidth: 1 }]}>
               <View style={styles.iconPlaceholder}>
                 <Image src="/images/web.png" style={styles.logoIcon} />
               </View>
@@ -176,11 +188,10 @@ export const PdsDocument = ({ data }: { data: any }) => (
             </View>
 
             {/* Icon 3 - Email */}
-            <View style={styles.contactItem}>
+            <View style={[styles.contactItem, { borderRightWidth: 1 }]}>
               <View style={styles.iconPlaceholder}>
                 <Image src="/images/mail.png" style={styles.logoIcon} />
               </View>
-
               <Text style={styles.contactTextIcon}>
                 E-mel kami di info@etiqa.com.my
               </Text>
@@ -188,6 +199,7 @@ export const PdsDocument = ({ data }: { data: any }) => (
 
             {/* Icon 4 - QR Code */}
             <View style={styles.contactItem}>
+              {/* no right/bottom border (last column, last row) */}
               <View style={styles.iconPlaceholder}>
                 <Image src="/images/qr.png" style={styles.logoIcon} />
               </View>
@@ -326,13 +338,6 @@ export const PdsDocument = ({ data }: { data: any }) => (
           tiada nilai serahan akan dibayar di bawah sijil ini, anda mungkin
           berhak ke atas lebihan DRP terkumpul, jika ada.
         </Text>
-      </View>
-
-      {/* ================= FOOTER ================= */}
-      <View style={styles.footer}>
-        <Text>Hubungi kami: {data.contact.phone}</Text>
-        <Text>Emel: {data.contact.email}</Text>
-        <Text>Laman web: {data.contact.website}</Text>
       </View>
     </Page>
   </Document>

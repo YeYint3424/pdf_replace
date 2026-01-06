@@ -2,24 +2,25 @@ import { StyleSheet } from "@react-pdf/renderer";
 
 export const styles = StyleSheet.create({
   page: {
-    padding: 32,
+    padding: 16,
+    paddingTop: 32,
     fontSize: 10,
     fontFamily: "Helvetica",
     lineHeight: 1.4,
   },
 
-  /* HEADER */
   header: {
     flexDirection: "row",
-    justifyContent: "space-between",
     alignItems: "flex-start",
+    justifyContent: "space-between",
     marginBottom: 12,
+    gap: 1,
   },
 
   title: {
     fontSize: 14,
     fontWeight: "bold",
-    width: "70%",
+    // width: "70%",
   },
 
   rightHeader: {
@@ -79,13 +80,23 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
+  contactTitle: {
+    fontSize: 10,
+    fontWeight: "bold",
+  },
+
   /* SECTIONS */
   section: {
     marginTop: 10,
   },
 
   paragraph: {
-    marginBottom: 4,
+    marginBottom: 1,
+  },
+
+  rowHeader: {
+    marginBottom: 1,
+    padding: 4,
   },
 
   bold: {
@@ -97,7 +108,7 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#000",
     marginTop: 4,
-    marginBottom: 8,
+    borderBottomWidth: 0,
   },
 
   row: {
@@ -116,24 +127,21 @@ export const styles = StyleSheet.create({
   },
 
   cellLeft: {
-    width: "30%",
+    width: "25%",
     padding: 4,
     borderRightWidth: 1,
     borderColor: "#000",
   },
 
   cellRight: {
-    width: "65%",
+    width: "70%",
     padding: 4,
   },
 
   /* BOXES */
   infoBox: {
-    backgroundColor: "#f0f0f0",
-    padding: 8,
-    marginTop: 8,
+    padding: 4,
     marginBottom: 8,
-    borderRadius: 4,
   },
 
   infoText: {
@@ -144,7 +152,7 @@ export const styles = StyleSheet.create({
   exclusionBox: {
     borderWidth: 1,
     borderColor: "#000",
-    padding: 8,
+    padding: 4,
     marginTop: 8,
     marginBottom: 8,
   },
@@ -152,7 +160,7 @@ export const styles = StyleSheet.create({
   termsBox: {
     borderWidth: 1,
     borderColor: "#000",
-    padding: 8,
+    padding: 4,
     marginTop: 4,
     marginBottom: 8,
   },
@@ -160,7 +168,7 @@ export const styles = StyleSheet.create({
   obligationBox: {
     borderWidth: 1,
     borderColor: "#000",
-    padding: 8,
+    padding: 4,
     marginTop: 4,
     marginBottom: 8,
   },
@@ -168,7 +176,7 @@ export const styles = StyleSheet.create({
   feesBox: {
     borderWidth: 1,
     borderColor: "#000",
-    padding: 8,
+    padding: 4,
     marginTop: 8,
     marginBottom: 8,
   },
@@ -181,29 +189,28 @@ export const styles = StyleSheet.create({
   contactGrid: {
     width: "100%",
     flexDirection: "row",
+    flexWrap: "wrap",
+    borderWidth: 1,
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
     marginTop: 8,
-    marginBottom: 8,
+    marginBottom: 4,
   },
 
   contactItem: {
-    borderWidth: 1,
     flex: 1,
-    width: 100,
-    height: 100,
-    borderColor: "#000",
+    height: 80,
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "center",
-    gap: 6,
+    gap: 2,
+    borderColor: "#000",
   },
 
   contactTextIcon: {
     width: 100,
     textAlign: "center",
-    marginTop: 4,
   },
 
   iconPlaceholder: {
@@ -220,7 +227,6 @@ export const styles = StyleSheet.create({
   footnote: {
     fontSize: 9,
     fontStyle: "italic",
-    marginTop: 4,
   },
 
   /* OBLIGATION & FEES */
@@ -257,7 +263,7 @@ export const styles = StyleSheet.create({
 
   /* TEXT STYLES */
   bulletPoint: {
-    marginLeft: 10,
+    marginLeft: 4,
     marginBottom: 4,
   },
 
