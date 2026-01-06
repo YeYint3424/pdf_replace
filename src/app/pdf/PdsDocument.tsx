@@ -6,7 +6,7 @@ export const PdsDocument = ({ data }) => (
     <Page size="A4" style={styles.page}>
       {/* ================= HEADER ================= */}
       <View style={styles.header}>
-        <Text style={styles.title}>HELAIAN PENDEDAHAN PRODUK</Text>
+        <Text style={styles.title}>Pelanggan yang dihormati,</Text>
 
         <View style={styles.rightHeader}>
           <Image src="/images/etiqa-logo.png" style={styles.logo} />
@@ -16,6 +16,7 @@ export const PdsDocument = ({ data }) => (
 
       {/* ================= INTRO ================= */}
       <View style={styles.section}>
+        <Text style={styles.title}>Pelanggan yang dihormati,</Text>
         <Text style={styles.paragraph}>
           Pelanggan yang dihormati, dokumen ini menerangkan maklumat penting
           tentang pelan takaful keluarga anda. Anda dinasihatkan untuk membaca
