@@ -6,7 +6,7 @@ export const PdsDocument = ({ data }: { data: any }) => (
     <Page size="A4" style={styles.page}>
       {/* ================= HEADER ================= */}
       <View style={styles.header}>
-        <Text style={styles.title}>HELAIAN PENDEDAHAN PRODUK</Text>
+        <Text style={styles.title}>Pelanggan yang dihormati,</Text>
 
         <View style={styles.rightHeader}>
           <Image src="/images/etiqa-logo.png" style={styles.logo} />
