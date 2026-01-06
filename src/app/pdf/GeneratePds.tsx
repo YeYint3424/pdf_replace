@@ -11,26 +11,25 @@ const PDFViewer = dynamic(
 );
 
 const pdsData = {
-  issueDate: "05/01/2026",
-  planName: "e-Takaful Hayat",
-
+  issueDate: "25082025",
   contribution: {
-    amount: "12.90",
-    mode: "Bulanan",
-    lastPayingAge: 65,
+    amount: "100",
+    mode: "bulanan",
+    lastPayingAge: "70",
   },
-
   benefits: {
-    death: "100,000",
-    accidentalDeath: "Tambahan 200%",
+    death: "50,000",
+    accidentalDeath: "200% tambahan",
     illness: "1,000",
-    surrender: "Lebihan DRP",
+    surrender: "Lebihan DRP terkumpul",
   },
-
+  fees: {
+    wakalah: "25.00",
+  },
   contact: {
     phone: "1-300-13-8888",
     email: "info@etiqa.com.my",
-    website: "www.etiqa.com.my",
+    website: "https://www.etiqa.com.my",
   },
 };
 
