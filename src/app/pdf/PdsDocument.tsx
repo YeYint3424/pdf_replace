@@ -359,38 +359,44 @@ export const PdsDocument = ({ data, lan }: { data: any; lan: string }) => (
           <View style={styles.numberCircle}>
             <Text style={styles.numberCircleText}>4</Text>
           </View>
-          <Text style={styles.sectionTitle}>Syarat Utama Lain</Text>
+          <Text style={styles.sectionTitle}>
+            {lan === "en" ? "Other Key Terms" : "Syarat Utama Lain"}
+          </Text>
         </View>
 
         <View style={styles.termsBox}>
           <Text style={styles.bulletPoint}>
-            • Anda mesti mendedahkan semua fakta penting seperti keadaan
-            perubatan dan menyatakan umur anda dengan betul bagi membantu kami
-            membuat keputusan yang betul untuk menerima risiko dan menentukan
-            kadar dan terma sijil anda. Jika sebaliknya, anda mungkin berisiko
-            mengakibatkan sijil anda dibatal, tuntutan anda ditolak, atau terma
-            dan syarat sijil diubah.
+            {lan === "en"
+              ? "* You must disclose all materials facts such as medical condition and state your age correctly to help us make the right decision in accepting the risk and determining the rates and terms of your certificate. Otherwise, you may risk having your certificate voided, your claim rejected or terms and conditions of the certificate being changed."
+              : "* Anda mesti mendedahkan semua fakta penting seperti keadaan perubatan dan menyatakan umur anda dengan betul bagi membantu kami membuat keputusan yang betul untuk menerima risiko dan menentukan kadar dan terma sijil anda. Jika sebaliknya, anda mungkin berisiko mengakibatkan sijil anda dibatal, tuntutan anda ditolak, atau terma dan syarat sijil diubah."}
           </Text>
           <Text style={styles.bulletPoint}>
-            • Anda harus berpuas hati bahawa pelan itu memenuhi keperluan anda
-            dan anda mampu membayar sumbangan tersebut.
+            {lan === "en"
+              ? "* You should satisfy yourself that the plan serves your needs and that you can afford the contribution."
+              : "* Anda harus berpuas hati bahawa pelan itu memenuhi keperluan anda dan anda mampu membayar sumbangan tersebut."}
           </Text>
           <Text style={styles.bulletPoint}>
-            • Sumbangan yang ditunjukkan adalah berdasarkan umur yang telah
-            dicapai anda (hari jadi berikutnya) pada tarikh permulaan, dan akan
-            berubah berdasarkan umur yang telah dicapai pada tahun sijil semasa.
-            Kadar sumbangan adalah tidak dijamin dan kami berhak untuk mengubah
-            kadar sumbangan dengan memberikan notis 3 bulan lebih awal.
+            {lan === "en"
+              ? "The contribution indicated is based on your attained age (age next birthday) at the commencement date. The contribution will increase on the 1st day of the next certificate year, in accordance to your attained age. Contribution rates are not guaranteed and we reserve the right to revise the contribution rates by giving 3-months prior notice."
+              : "* Sumbangan yang ditunjukkan adalah berdasarkan umur yang telah dicapai anda (hari jadi berikutnya) pada tarikh permulaan, dan akan berubah berdasarkan umur yang telah dicapai pada tahun sijil semasa. Kadar sumbangan adalah tidak dijamin dan kami berhak untuk mengubah kadar sumbangan dengan memberikan notis 3 bulan lebih awal."}
           </Text>
           <Text style={styles.bulletPoint}>
-            • Tempoh tangguh -- Tempoh masa tambahan yang diberikan kepada anda
-            untuk membayar sumbangan yang perlu dibayar. Tempoh tangguh di bawah
-            sijil ini adalah 31 hari dari tarikh sumbangan yang perlu dibayar.
+            {lan === "en"
+              ? "* Grace period – The additional period of time that is provided for you to pay the contribution due. The grace period under this certificate is 31 days from the date the contribution is due"
+              : "* Tempoh tangguh -- Tempoh masa tambahan yang diberikan kepada anda untuk membayar sumbangan yang perlu dibayar. Tempoh tangguh di bawah sijil ini adalah 31 hari dari tarikh sumbangan yang perlu dibayar."}
           </Text>
           <Text style={styles.noteText}>
-            <Text style={styles.bold}>Nota:</Text> Senarai ini adalah{" "}
-            <Text style={styles.bold}>tidak menyeluruh</Text>. Anda perlu
-            merujuk kepada sijil untuk senarai terma dan syarat yang lengkap.
+            <Text style={styles.bold}>
+              {lan === "en" ? "Note: " : "Nota: "}
+            </Text>
+            {lan === "en" ? "This list is " : "Senarai ini adalah "}
+            <Text style={styles.bold}>
+              {lan === "en" ? "non-exhaustive" : "tidak menyeluruh"}
+            </Text>
+            .
+            {lan === "en"
+              ? "You should refer to the certificate for the full list of terms and conditions"
+              : "Anda perlu merujuk kepada sijil untuk senarai terma dan syarat yang lengkap."}
           </Text>
         </View>
       </View>
@@ -402,29 +408,38 @@ export const PdsDocument = ({ data, lan }: { data: any; lan: string }) => (
             <Text style={styles.numberCircleText}>?</Text>
           </View>
           <Text style={styles.sectionTitle}>
-            Bolehkan saya membatalkan sijil saya?
+            {lan === "en"
+              ? "Can I cancel my certificate?"
+              : "Bolehkan saya membatalkan sijil saya?"}
           </Text>
         </View>
 
         <Text style={styles.paragraph}>
-          Ya, anda boleh membatalkan sijil anda dengan memberikan arahan
-          bertulis kepada kami
+          {lan === "en"
+            ? "Yes, you may cancel your certificate by giving a written notice to us."
+            : "Ya, anda boleh membatalkan sijil anda dengan memberikan arahan bertulis kepada kami."}
         </Text>
 
         <Text style={styles.bulletPoint}>
-          • <Text style={styles.bold}>Tempoh percuma:</Text> Anda boleh
-          membatalkan sijil dengan memberi arahan bertulis kepada kami dalam
-          tempoh 15 hari selepas sijil diterima oleh anda. Sumbangan yang telah
-          anda bayar (tolak sebarang fi pemeriksaan perubatan yang ditanggung)
-          kepada anda.
+          •{" "}
+          <Text style={styles.bold}>
+            {lan === "en" ? "Free look period: " : "Tempoh percuma: "}
+          </Text>
+          {lan === "en"
+            ? "You have the right to cancel the certificate by giving a written instruction to us within 15 days after the certificate has been received by you. The contributions that you have paid (less any medical examination fee incurred) will be refunded to you."
+            : "Anda boleh membatalkan sijil dengan memberi arahan bertulis kepada kami dalam tempoh 15 hari selepas sijil diterima oleh anda. Sumbangan yang telah anda bayar (tolak sebarang fi pemeriksaan perubatan yang ditanggung) kepada anda."}
         </Text>
 
         <Text style={styles.bulletPoint}>
-          • <Text style={styles.bold}>Selepas tempoh percuma:</Text> Anda boleh
-          membatalkan sijil anda dengan mengembalikan sijil kepada kami berserta
-          permohonan serahan secara bertulis. Tiada pengembalian sumbangan dan
-          tiada nilai serahan akan dibayar di bawah sijil ini, anda mungkin
-          berhak ke atas lebihan DRP terkumpul, jika ada.
+          •{" "}
+          <Text style={styles.bold}>
+            {lan === "en"
+              ? "After free look period:"
+              : "Selepas tempoh percuma:"}
+          </Text>
+          {lan === "en"
+            ? "You may cancel your certificate by returning the certificate to us with a written surrender request. There will be no refund of contributions and no surrender value payable under the certificate, you may be entitled to accumulated PRF surplus, if any."
+            : "Anda boleh membatalkan sijil anda dengan mengembalikan sijil kepada kami berserta permohonan serahan secara bertulis. Tiada pengembalian sumbangan dan tiada nilai serahan akan dibayar di bawah sijil ini, anda mungkin berhak ke atas lebihan DRP terkumpul, jika ada."}
         </Text>
       </View>
     </Page>
