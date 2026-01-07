@@ -9,7 +9,7 @@ export const PdsDocument = ({ data }: { data: any }) => (
         {/* LEFT SIDE */}
         <View style={{ flex: 5 }}>
           {/* Left takes twice as much space as right */}
-          <Text style={styles.title}>HELAIAN PENDEDAHAN PRODUK</Text>
+          <Text style={styles.titleTop}>HELAIAN PENDEDAHAN PRODUK</Text>
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Pelanggan yang dihormati,</Text>
             <Text style={styles.paragraph}>
@@ -237,7 +237,7 @@ export const PdsDocument = ({ data }: { data: any }) => (
             Tempoh: Sehingga umur {data.contribution.lastPayingAge} tahun.
           </Text>
 
-          <Text style={styles.boxTitle}>
+          <Text style={styles.boxTitleThree}>
             Anda juga perlu membayar fi dan caj berikut:
           </Text>
 

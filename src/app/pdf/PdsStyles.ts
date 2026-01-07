@@ -3,7 +3,7 @@ import { StyleSheet } from "@react-pdf/renderer";
 export const styles = StyleSheet.create({
   page: {
     padding: 16,
-    paddingTop: 32,
+    paddingTop: 16,
     fontSize: 10,
     fontFamily: "Helvetica",
     lineHeight: 1.4,
@@ -13,12 +13,17 @@ export const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    marginBottom: 12,
+    marginBottom: 2,
     gap: 1,
   },
 
   title: {
     fontSize: 14,
+    fontWeight: "bold",
+    // width: "70%",
+  },
+  titleTop: {
+    fontSize: 11,
     fontWeight: "bold",
     // width: "70%",
   },
@@ -28,16 +33,22 @@ export const styles = StyleSheet.create({
   },
 
   logo: {
-    width: 80,
+    width: 62,
     marginBottom: 4,
   },
+
+  logoNum: {
+    height: 16,
+    marginBottom: 4,
+  },
+
   logoIcon: {
     width: 30,
     marginBottom: 4,
   },
 
   issueDate: {
-    fontSize: 9,
+    fontSize: 8,
   },
 
   /* SECTION HEADER WITH CIRCLE */
@@ -50,20 +61,21 @@ export const styles = StyleSheet.create({
   numberCircle: {
     width: 16,
     height: 16,
-    borderRadius: 12,
+    borderRadius: 8,
     backgroundColor: "#2f74b5",
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-    marginRight: 8,
+    marginRight: 4,
+    padding: 0,
   },
 
   numberCircleText: {
-    textAlign: "center",
     color: "white",
     fontSize: 10,
     fontWeight: "bold",
   },
+
   numberCircleRed: {
     width: 16,
     height: 16,
@@ -76,27 +88,30 @@ export const styles = StyleSheet.create({
   },
 
   sectionTitle: {
-    fontSize: 11,
+    fontSize: 10,
     fontWeight: "bold",
   },
 
   contactTitle: {
-    fontSize: 10,
+    fontSize: 8,
     fontWeight: "bold",
   },
 
   /* SECTIONS */
   section: {
-    marginTop: 10,
+    marginTop: 2,
   },
 
   paragraph: {
+    fontSize: 8,
     marginBottom: 1,
   },
 
   rowHeader: {
     marginBottom: 1,
     padding: 2,
+    fontSize: 8,
+    fontWeight: "bold",
   },
 
   bold: {
@@ -121,6 +136,7 @@ export const styles = StyleSheet.create({
     width: "5%",
     padding: 2,
     borderRightWidth: 1,
+    fontSize: 8,
     borderColor: "#000",
     textAlign: "center",
     fontWeight: "bold",
@@ -128,6 +144,7 @@ export const styles = StyleSheet.create({
 
   cellLeft: {
     width: "25%",
+    fontSize: 8,
     padding: 2,
     borderRightWidth: 1,
     borderColor: "#000",
@@ -135,6 +152,7 @@ export const styles = StyleSheet.create({
 
   cellRight: {
     width: "70%",
+    fontSize: 8,
     padding: 2,
   },
 
@@ -145,7 +163,7 @@ export const styles = StyleSheet.create({
   },
 
   infoText: {
-    fontSize: 9,
+    fontSize: 8,
     lineHeight: 1.3,
   },
 
@@ -155,6 +173,7 @@ export const styles = StyleSheet.create({
     marginTop: 8,
     marginBottom: 8,
     padding: 2,
+    fontSize: 8,
   },
 
   termsBox: {
@@ -163,6 +182,7 @@ export const styles = StyleSheet.create({
     padding: 2,
     marginTop: 4,
     marginBottom: 8,
+    fontSize: 8,
   },
 
   obligationBox: {
@@ -202,6 +222,7 @@ export const styles = StyleSheet.create({
 
   boxTitleThree: {
     width: "100%",
+    fontSize: 8,
     borderBottomWidth: 1,
     borderColor: "#000",
     fontWeight: "bold",
@@ -232,6 +253,7 @@ export const styles = StyleSheet.create({
   },
 
   contactTextIcon: {
+    fontSize: 8,
     width: 100,
     textAlign: "center",
   },
@@ -248,7 +270,7 @@ export const styles = StyleSheet.create({
   },
 
   footnote: {
-    fontSize: 9,
+    fontSize: 8,
     fontStyle: "italic",
   },
 
@@ -260,6 +282,7 @@ export const styles = StyleSheet.create({
 
   obligationLabel: {
     width: "40%",
+    fontSize: 8,
     borderRightWidth: 1,
     borderColor: "#000",
     borderBottomWidth: 1,
@@ -267,6 +290,7 @@ export const styles = StyleSheet.create({
   },
 
   obligationValue: {
+    fontSize: 8,
     width: "60%",
     borderColor: "#000",
     borderBottomWidth: 1,
@@ -274,6 +298,7 @@ export const styles = StyleSheet.create({
   },
 
   periodText: {
+    fontSize: 8,
     width: "100%",
     borderBottomWidth: 1,
     borderColor: "#000",
@@ -293,10 +318,12 @@ export const styles = StyleSheet.create({
     width: "40%",
     borderRightWidth: 1,
     borderColor: "#000",
+    fontSize: 8,
     padding: 2,
   },
 
   feeValue: {
+    fontSize: 8,
     padding: 2,
     width: "60%",
   },
@@ -305,6 +332,7 @@ export const styles = StyleSheet.create({
   bulletPoint: {
     marginLeft: 2,
     marginBottom: 2,
+    fontSize: 8,
   },
 
   noteText: {
