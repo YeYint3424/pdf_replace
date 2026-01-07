@@ -6,45 +6,30 @@ export const styles = StyleSheet.create({
     paddingTop: 16,
     fontSize: 10,
     fontFamily: "Helvetica",
-    lineHeight: 1.4,
+    lineHeight: 1.2,
   },
 
   header: {
     flexDirection: "row",
     alignItems: "flex-start",
     justifyContent: "space-between",
-    marginBottom: 2,
+    marginBottom: 1, // Reduced from 2
     gap: 1,
   },
 
-  title: {
-    fontSize: 14,
-    fontWeight: "bold",
-    // width: "70%",
-  },
   titleTop: {
     fontSize: 11,
     fontWeight: "bold",
-    // width: "70%",
-  },
-
-  rightHeader: {
-    alignItems: "flex-end",
   },
 
   logo: {
     width: 62,
-    marginBottom: 4,
-  },
-
-  logoNum: {
-    height: 16,
-    marginBottom: 4,
+    marginBottom: 2, // Reduced from 4
   },
 
   logoIcon: {
     width: 30,
-    marginBottom: 4,
+    marginBottom: 2, // Reduced from 4
   },
 
   issueDate: {
@@ -55,7 +40,7 @@ export const styles = StyleSheet.create({
   sectionHeader: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 4,
+    marginBottom: 2, // Reduced from 4
   },
 
   numberCircle: {
@@ -76,17 +61,6 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
   },
 
-  numberCircleRed: {
-    width: 16,
-    height: 16,
-    borderRadius: 12,
-    backgroundColor: "#ff0000",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    marginRight: 8,
-  },
-
   sectionTitle: {
     fontSize: 10,
     fontWeight: "bold",
@@ -99,12 +73,13 @@ export const styles = StyleSheet.create({
 
   /* SECTIONS */
   section: {
-    marginTop: 2,
+    marginTop: 1, // Reduced from 2
   },
 
   paragraph: {
     fontSize: 8,
     marginBottom: 1,
+    lineHeight: 1.1,
   },
 
   rowHeader: {
@@ -112,6 +87,7 @@ export const styles = StyleSheet.create({
     padding: 2,
     fontSize: 8,
     fontWeight: "bold",
+    lineHeight: 1.1,
   },
 
   bold: {
@@ -122,7 +98,7 @@ export const styles = StyleSheet.create({
   table: {
     borderWidth: 1,
     borderColor: "#000",
-    marginTop: 4,
+    marginTop: 2, // Reduced from 4
     borderBottomWidth: 0,
   },
 
@@ -140,6 +116,7 @@ export const styles = StyleSheet.create({
     borderColor: "#000",
     textAlign: "center",
     fontWeight: "bold",
+    lineHeight: 1.1,
   },
 
   cellLeft: {
@@ -148,30 +125,32 @@ export const styles = StyleSheet.create({
     padding: 2,
     borderRightWidth: 1,
     borderColor: "#000",
+    lineHeight: 1.1,
   },
 
   cellRight: {
     width: "70%",
     fontSize: 8,
     padding: 2,
+    lineHeight: 1.1,
   },
 
   /* BOXES */
   infoBox: {
     padding: 2,
-    marginBottom: 8,
+    marginBottom: 4, // Reduced from 8
   },
 
   infoText: {
     fontSize: 8,
-    lineHeight: 1.3,
+    lineHeight: 1.1,
   },
 
   exclusionBox: {
     borderWidth: 1,
     borderColor: "#000",
-    marginTop: 8,
-    marginBottom: 8,
+    marginTop: 4, // Reduced from 8
+    marginBottom: 4, // Reduced from 8
     padding: 2,
     fontSize: 8,
   },
@@ -180,40 +159,18 @@ export const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#000",
     padding: 2,
-    marginTop: 4,
-    marginBottom: 8,
+    paddingBottom: 0,
+    marginTop: 2, // Reduced from 4
+    marginBottom: 4, // Reduced from 8
     fontSize: 8,
   },
 
-  obligationBox: {
-    borderWidth: 1,
-    borderColor: "#000",
-    padding: 2,
-    marginTop: 4,
-    marginBottom: 8,
-  },
   obligationBoxThree: {
     borderWidth: 1,
     borderColor: "#000",
     padding: 0,
-    marginTop: 4,
-    marginBottom: 8,
-  },
-
-  feesBox: {
-    borderWidth: 1,
-    borderColor: "#000",
-    padding: 2,
-    marginTop: 8,
-    marginBottom: 8,
-  },
-
-  boxTitle: {
-    width: "100%",
-    borderBottomWidth: 1,
-    borderColor: "#000",
-    padding: 2,
-    fontWeight: "bold",
+    marginTop: 2, // Reduced from 4
+    marginBottom: 4, // Reduced from 8
   },
 
   boxTitleTwo: {
@@ -228,6 +185,7 @@ export const styles = StyleSheet.create({
     fontWeight: "bold",
     marginBottom: 0,
     padding: 2,
+    lineHeight: 1.1,
   },
 
   contactGrid: {
@@ -238,8 +196,8 @@ export const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
-    marginTop: 8,
-    marginBottom: 4,
+    marginTop: 4, // Reduced from 8
+    marginBottom: 2, // Reduced from 4
   },
 
   contactItem: {
@@ -256,6 +214,7 @@ export const styles = StyleSheet.create({
     fontSize: 8,
     width: 100,
     textAlign: "center",
+    lineHeight: 1.1,
   },
 
   iconPlaceholder: {
@@ -263,10 +222,6 @@ export const styles = StyleSheet.create({
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
-  },
-
-  contactText: {
-    flex: 1,
   },
 
   footnote: {
@@ -277,7 +232,7 @@ export const styles = StyleSheet.create({
   /* OBLIGATION & FEES */
   obligationRow: {
     flexDirection: "row",
-    marginBottom: 4,
+    marginBottom: 2, // Reduced from 4
   },
 
   obligationLabel: {
@@ -287,6 +242,7 @@ export const styles = StyleSheet.create({
     borderColor: "#000",
     borderBottomWidth: 1,
     padding: 2,
+    lineHeight: 1.1,
   },
 
   obligationValue: {
@@ -295,6 +251,7 @@ export const styles = StyleSheet.create({
     borderColor: "#000",
     borderBottomWidth: 1,
     padding: 2,
+    lineHeight: 1.1,
   },
 
   periodText: {
@@ -303,6 +260,7 @@ export const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: "#000",
     padding: 2,
+    lineHeight: 1.1,
   },
 
   feeRow: {
@@ -320,24 +278,28 @@ export const styles = StyleSheet.create({
     borderColor: "#000",
     fontSize: 8,
     padding: 2,
+    lineHeight: 1.1,
   },
 
   feeValue: {
     fontSize: 8,
     padding: 2,
     width: "60%",
+    lineHeight: 1.1,
   },
 
   /* TEXT STYLES */
   bulletPoint: {
     marginLeft: 2,
-    marginBottom: 2,
+    marginBottom: 1, // Reduced from 2
     fontSize: 8,
+    lineHeight: 1.1,
   },
 
   noteText: {
-    marginTop: 8,
+    marginTop: 4, // Reduced from 8
     fontStyle: "italic",
+    lineHeight: 1.1,
   },
 
   /* INLINE ICON */
@@ -353,9 +315,9 @@ export const styles = StyleSheet.create({
 
   /* FOOTER */
   footer: {
-    marginTop: 14,
+    marginTop: 8, // Reduced from 14
     borderTopWidth: 1,
-    paddingTop: 6,
+    paddingTop: 4, // Reduced from 6
     fontSize: 9,
   },
 });
