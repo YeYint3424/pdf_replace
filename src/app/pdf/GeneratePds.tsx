@@ -11,7 +11,7 @@ const PDFViewer = dynamic(
 );
 
 const pdsData = {
-  issueDate: "25082025",
+  issueDate: "25,08,2025",
   contribution: {
     amount: "100",
     mode: "bulanan",

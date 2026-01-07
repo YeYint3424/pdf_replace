@@ -131,16 +131,16 @@ export const PdsDocument = ({ data }: { data: any }) => (
         </View>
 
         <View style={styles.exclusionBox}>
-          <Text style={styles.boxTitle}>
+          <Text style={styles.boxTitleTwo}>
             Takaful keluarga anda <Text style={styles.bold}>mengecualikan</Text>
             :
           </Text>
           <Text style={styles.bulletPoint}>
-            • Bunuh diri - jika kematian disebabkan bunuh diri dalam keadaan
+            * Bunuh diri - jika kematian disebabkan bunuh diri dalam keadaan
             waras dalam 1 tahun dari tarikh pengeluaran.
           </Text>
           <Text style={styles.bulletPoint}>
-            • Kematian akibat kemalangan yang berlaku secara langsung atau tidak
+            * Kematian akibat kemalangan yang berlaku secara langsung atau tidak
             langsung disebabkan oleh mana-mana perkara berikut:
           </Text>
           <Text style={styles.bulletPoint}>
@@ -222,8 +222,8 @@ export const PdsDocument = ({ data }: { data: any }) => (
           <Text style={styles.sectionTitle}>Ketahui Kewajipan Anda</Text>
         </View>
 
-        <View style={styles.obligationBox}>
-          <Text style={styles.boxTitle}>
+        <View style={styles.obligationBoxThree}>
+          <Text style={styles.boxTitleThree}>
             Untuk takaful keluarga anda, anda mesti membayar sumbangan sebanyak:
           </Text>
           <View style={styles.obligationRow}>
@@ -236,9 +236,7 @@ export const PdsDocument = ({ data }: { data: any }) => (
           <Text style={styles.periodText}>
             Tempoh: Sehingga umur {data.contribution.lastPayingAge} tahun.
           </Text>
-        </View>
 
-        <View style={styles.feesBox}>
           <Text style={styles.boxTitle}>
             Anda juga perlu membayar fi dan caj berikut:
           </Text>
@@ -258,7 +256,7 @@ export const PdsDocument = ({ data }: { data: any }) => (
             </Text>
           </View>
 
-          <View style={styles.feeRow}>
+          <View style={styles.feeRowLast}>
             <Text style={styles.feeLabel}>Caj-caj Lain Yang Dikenakan</Text>
             <Text style={styles.feeValue}>Tidak berkenaan</Text>
           </View>

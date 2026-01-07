@@ -96,7 +96,7 @@ export const styles = StyleSheet.create({
 
   rowHeader: {
     marginBottom: 1,
-    padding: 4,
+    padding: 2,
   },
 
   bold: {
@@ -119,7 +119,7 @@ export const styles = StyleSheet.create({
 
   cellNumber: {
     width: "5%",
-    padding: 4,
+    padding: 2,
     borderRightWidth: 1,
     borderColor: "#000",
     textAlign: "center",
@@ -128,19 +128,19 @@ export const styles = StyleSheet.create({
 
   cellLeft: {
     width: "25%",
-    padding: 4,
+    padding: 2,
     borderRightWidth: 1,
     borderColor: "#000",
   },
 
   cellRight: {
     width: "70%",
-    padding: 4,
+    padding: 2,
   },
 
   /* BOXES */
   infoBox: {
-    padding: 4,
+    padding: 2,
     marginBottom: 8,
   },
 
@@ -152,15 +152,15 @@ export const styles = StyleSheet.create({
   exclusionBox: {
     borderWidth: 1,
     borderColor: "#000",
-    padding: 4,
     marginTop: 8,
     marginBottom: 8,
+    padding: 2,
   },
 
   termsBox: {
     borderWidth: 1,
     borderColor: "#000",
-    padding: 4,
+    padding: 2,
     marginTop: 4,
     marginBottom: 8,
   },
@@ -168,7 +168,14 @@ export const styles = StyleSheet.create({
   obligationBox: {
     borderWidth: 1,
     borderColor: "#000",
-    padding: 4,
+    padding: 2,
+    marginTop: 4,
+    marginBottom: 8,
+  },
+  obligationBoxThree: {
+    borderWidth: 1,
+    borderColor: "#000",
+    padding: 0,
     marginTop: 4,
     marginBottom: 8,
   },
@@ -176,14 +183,30 @@ export const styles = StyleSheet.create({
   feesBox: {
     borderWidth: 1,
     borderColor: "#000",
-    padding: 4,
+    padding: 2,
     marginTop: 8,
     marginBottom: 8,
   },
 
   boxTitle: {
+    width: "100%",
+    borderBottomWidth: 1,
+    borderColor: "#000",
+    padding: 2,
     fontWeight: "bold",
-    marginBottom: 6,
+  },
+
+  boxTitleTwo: {
+    width: "100%",
+  },
+
+  boxTitleThree: {
+    width: "100%",
+    borderBottomWidth: 1,
+    borderColor: "#000",
+    fontWeight: "bold",
+    marginBottom: 0,
+    padding: 2,
   },
 
   contactGrid: {
@@ -236,35 +259,52 @@ export const styles = StyleSheet.create({
   },
 
   obligationLabel: {
-    width: "30%",
+    width: "40%",
+    borderRightWidth: 1,
+    borderColor: "#000",
+    borderBottomWidth: 1,
+    padding: 2,
   },
 
   obligationValue: {
-    width: "70%",
+    width: "60%",
+    borderColor: "#000",
+    borderBottomWidth: 1,
+    padding: 2,
   },
 
   periodText: {
-    marginTop: 4,
-    fontStyle: "italic",
+    width: "100%",
+    borderBottomWidth: 1,
+    borderColor: "#000",
+    padding: 2,
   },
 
   feeRow: {
     flexDirection: "row",
-    marginBottom: 4,
+    borderBottomWidth: 1,
+    borderColor: "#000",
+  },
+  feeRowLast: {
+    flexDirection: "row",
   },
 
   feeLabel: {
     width: "40%",
+    borderRightWidth: 1,
+    borderColor: "#000",
+    padding: 2,
   },
 
   feeValue: {
+    padding: 2,
     width: "60%",
   },
 
   /* TEXT STYLES */
   bulletPoint: {
-    marginLeft: 4,
-    marginBottom: 4,
+    marginLeft: 2,
+    marginBottom: 2,
   },
 
   noteText: {
