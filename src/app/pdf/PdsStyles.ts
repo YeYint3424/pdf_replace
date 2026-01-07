@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     paddingTop: 16,
     fontSize: 10,
     fontFamily: "Helvetica",
-    lineHeight: 1.4,
+    lineHeight: 1,
   },
 
   header: {
