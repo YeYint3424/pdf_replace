@@ -1,7 +1,7 @@
 import { Document, Image, Page, Text, View } from "@react-pdf/renderer";
 import { styles } from "./PdsStyles";
 
-export const PdsDocument = ({ data }: { data: any }) => (
+export const PdsDocument = ({ data, lan }: { data: any; lan: string }) => (
   <Document>
     <Page size="A4" style={styles.page}>
       {/* ================= HEADER ================= */}
@@ -9,17 +9,29 @@ export const PdsDocument = ({ data }: { data: any }) => (
         {/* LEFT SIDE */}
         <View style={{ flex: 5 }}>
           {/* Left takes twice as much space as right */}
-          <Text style={styles.titleTop}>HELAIAN PENDEDAHAN PRODUK</Text>
+          <Text style={styles.titleTop}>
+            {lan === "en"
+              ? "PRODUCT DISCLOSURE SHEET"
+              : "HELAIAN PENDEDAHAN PRODUK"}
+          </Text>
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>Pelanggan yang dihormati,</Text>
-            <Text style={styles.paragraph}>
-              Helaian Pendedahan Produk ini memberikan anda maklumat penting
-              tentang takaful keluarga anda.
+            <Text style={styles.sectionTitle}>
+              {lan === "en" ? "Dear Customer," : "Pelanggan yang dihormati,"}
             </Text>
             <Text style={styles.paragraph}>
-              Pelanggan lain telah membaca Helaian Pendedahan Produk ini dan
-              mendapati ia membantu;{" "}
-              <Text style={styles.bold}>anda harus membacanya juga</Text>.
+              {lan === "en"
+                ? "This Product Disclosure Sheet (PDS) provides you with key information on your family takaful."
+                : "Helaian Pendedahan Produk ini memberikan anda maklumat penting tentang takaful keluarga anda."}
+            </Text>
+            <Text style={styles.paragraph}>
+              {lan === "en"
+                ? "Other customers have read this PDS and found it helpful;"
+                : "Pelanggan lain telah membaca Helaian Pendedahan Produk ini dan mendapati ia membantu;"}{" "}
+              <Text style={styles.bold}>
+                {lan === "en"
+                  ? "you should read it too."
+                  : "anda harus membacanya juga."}
+              </Text>
             </Text>
           </View>
         </View>
@@ -27,7 +39,9 @@ export const PdsDocument = ({ data }: { data: any }) => (
         {/* RIGHT SIDE */}
         <View style={{ flex: 1, alignItems: "flex-end" }}>
           <Image src="/images/etiqa-logo.png" style={styles.logo} />
-          <Text style={styles.issueDate}>Tarikh: {data.issueDate}</Text>
+          <Text style={styles.issueDate}>
+            {lan === "en" ? "Date: " : "Tarikh: "} {data.issueDate}
+          </Text>
         </View>
       </View>
 
@@ -37,28 +51,37 @@ export const PdsDocument = ({ data }: { data: any }) => (
           <View style={styles.numberCircle}>
             <Text style={styles.numberCircleText}>1</Text>
           </View>
-          <Text style={styles.sectionTitle}>Apa itu e-Takaful Hayat?</Text>
+          <Text style={styles.sectionTitle}>
+            {lan === "en"
+              ? "What is e-Takaful Hayat?"
+              : "Apa itu e-Takaful Hayat?"}
+          </Text>
         </View>
         x
         <Text style={styles.paragraph}>
-          <Text style={styles.bold}>e-Takaful Hayat</Text> menyediakan
-          perlindungan takaful sehingga umur <Text style={styles.bold}>70</Text>{" "}
-          tahun. Ia adalah pelan takaful keluarga dengan sumbangan berkala yang
-          melindungi kematian disebabkan oleh semula jadi dan kemalangan dan
-          manfaat ihsan.
+          <Text style={styles.bold}>e-Takaful Hayat</Text>{" "}
+          {lan == "en"
+            ? "offers takaful protection until age"
+            : "menyediakan perlindungan takaful sehingga umur"}{" "}
+          <Text style={styles.bold}>70</Text>{" "}
+          {lan == "en"
+            ? "years old. It is a regular contribution family takaful plan that covers death, due to natural and accidental cause and compassionate benefit."
+            : "tahun. Ia adalah pelan takaful keluarga dengan sumbangan berkala yang melindungi kematian disebabkan oleh semula jadi dan kemalangan dan manfaat ihsan."}
         </Text>
       </View>
 
       <View style={styles.section}>
         <View style={styles.sectionHeader}>
           <Text style={styles.sectionTitle}>
-            Konsep-konsep Syariah yang diguna pakai{" "}
+            {lan == "en"
+              ? "Applicable Shariah concepts"
+              : "Konsep-konsep Syariah yang diguna pakai"}
           </Text>
         </View>
         <Text style={styles.paragraph}>
-          Tabarru', Wakalah, Ju'alah, Mudarabah, dan Hibah adalah konsep-konsep
-          Syariah yang diguna pakai untuk pelan ini. Sila rujuk sijil untuk
-          maklumat lanjut mengenai konsep-konsep Syariah tersebut.
+          {lan == "en"
+            ? "Tabarru’, Wakalah, Ju’alah, Mudarabah and Hibah are the Shariah concept applicable to this plan. Please refer to the certificate for more details of the Shariah concept."
+            : "Tabarru', Wakalah, Ju'alah, Mudarabah, dan Hibah adalah konsep-konsep Syariah yang diguna pakai untuk pelan ini. Sila rujuk sijil untuk maklumat lanjut mengenai konsep-konsep Syariah tersebut."}
         </Text>
       </View>
 
@@ -69,101 +92,136 @@ export const PdsDocument = ({ data }: { data: any }) => (
             <Text style={styles.numberCircleText}>2</Text>
           </View>
           <Text style={styles.sectionTitle}>
-            Ketahui Perlindungan/Manfaat Anda
+            {lan == "en"
+              ? "Know Your Coverages/Benefits"
+              : "Ketahui Perlindungan/Manfaat Anda"}
           </Text>
         </View>
 
         <View style={styles.table}>
           <View style={styles.row}>
             <Text style={styles.rowHeader}>
-              Sebagai ilustrasi, untuk RM {data.contribution.amount}{" "}
-              {data.contribution.mode}, anda{" "}
+              {lan === "en"
+                ? "As an illustration, for RM"
+                : "Sebagai ilustrasi, untuk RM"}{" "}
+              {data.contribution.amount} {data.contribution.mode},{" "}
               <Text style={styles.bold}>
-                akan menerima perlindungan/manfaat takaful keluarga berikut.
+                {lan === "en"
+                  ? "you will receive the following family takaful coverages/benefits."
+                  : "anda akan menerima perlindungan/manfaat takaful keluarga berikut."}
               </Text>
             </Text>
           </View>
           <View style={styles.row}>
             <Text style={styles.cellNumber}>1</Text>
-            <Text style={styles.cellLeft}>Manfaat Kematian</Text>
+            <Text style={styles.cellLeft}>
+              {lan === "en" ? "Death Benefit" : "Manfaat Kematian"}
+            </Text>
             <Text style={styles.cellRight}>
-              <Text style={styles.bold}>RM{data.benefits.death}</Text>; dan
-              lebihan Dana Risiko Peserta (DRP) terkumpul, jika ada, akan
-              dibayar.
+              <Text style={styles.bold}>RM{data.benefits.death}</Text>
+              {lan === "en"
+                ? ", and accumulated PRF surplus, if any, will be payable."
+                : "; dan lebihan Dana Risiko Peserta (DRP) terkumpul, jika ada, akan dibayar."}
             </Text>
           </View>
 
           <View style={styles.row}>
             <Text style={styles.cellNumber}>2</Text>
             <Text style={styles.cellLeft}>
-              Manfaat Kematian Akibat Kemalangan
+              {lan === "en"
+                ? "Accidental Death Benefit"
+                : "Manfaat Kematian Akibat Kemalangan"}
             </Text>
             <Text style={styles.cellRight}>
-              Tambahan 200% jumlah yang dilindungi akan dibayar, selain daripada
-              manfaat kematian.
+              {lan === "en"
+                ? "Additional 200% sum covered is payable, on top of the death benefit."
+                : "Tambahan 200% jumlah yang dilindungi akan dibayar, selain daripada manfaat kematian."}
             </Text>
           </View>
 
           <View style={styles.row}>
             <Text style={styles.cellNumber}>3</Text>
-            <Text style={styles.cellLeft}>Manfaat Ihsan</Text>
+            <Text style={styles.cellLeft}>
+              {lan === "en" ? "Compassionate Benefit" : "Manfaat Ihsan"}
+            </Text>
             <Text style={styles.cellRight}>RM1,000</Text>
           </View>
 
           <View style={styles.row}>
             <Text style={styles.cellNumber}>4</Text>
-            <Text style={styles.cellLeft}>Manfaat Serahan</Text>
+            <Text style={styles.cellLeft}>
+              {lan === "en" ? "Surrender Benefit" : "Manfaat Serahan"}
+            </Text>
             <Text style={styles.cellRight}>
-              Lebihan DRP terkumpul, jika ada, akan dibayar.
+              {lan === "en"
+                ? "Accumulated PRF surplus, if any, will be payable."
+                : "Lebihan DRP terkumpul, jika ada, akan dibayar."}
             </Text>
           </View>
         </View>
 
         <View style={styles.infoBox}>
           <Text style={styles.infoText}>
-            <Text style={styles.bold}>Peringatan:</Text> Sila rujuk kepada
-            ilustrasi pemasaran untuk butiran-butiran produk ini.
-            Manfaat-manfaat yang dibayar di bawah produk yang layak adalah
-            dilindungi oleh PIDM sehingga had perlindungan. Sila rujuk Brosur
-            Sistem Perlindungan Manfaat Takaful dan Insurans PIDM atau hubungi
-            kami atau PIDM (layari www.pidm.gov.my).
+            <Text style={styles.bold}>
+              {lan === "en" ? "Reminder:" : "Peringatan:"}
+            </Text>{" "}
+            {lan === "en"
+              ? "Please refer to the marketing illustration for details of this product. The benefit(s) payable under eligible product is(are) protected by PIDM up to limits. Please refer to PIDM’s TIPS Brochure or contact us or PIDM (visit"
+              : "Sila rujuk kepada ilustrasi pemasaran untuk butiran-butiran produk ini. Manfaat-manfaat yang dibayar di bawah produk yang layak adalah dilindungi oleh PIDM sehingga had perlindungan. Sila rujuk Brosur Sistem Perlindungan Manfaat Takaful dan Insurans PIDM atau hubungi kami atau PIDM (layari"}
+            {" www.pidm.gov.my)."}
           </Text>
         </View>
 
         <View style={styles.exclusionBox}>
           <Text style={styles.boxTitleTwo}>
-            Takaful keluarga anda <Text style={styles.bold}>mengecualikan</Text>
+            {lan === "en" ? "Your family takaful " : "Takaful keluarga anda "}
+            <Text style={styles.bold}>
+              {lan === "en" ? "excludes" : "mengecualikan"}
+            </Text>
             :
           </Text>
           <Text style={styles.bulletPoint}>
-            * Bunuh diri - jika kematian disebabkan bunuh diri dalam keadaan
-            waras dalam 1 tahun dari tarikh pengeluaran.
+            {lan === "en"
+              ? "* Suicide - if death was due to suicide while sane within 1 year from the issue date"
+              : "* Bunuh diri - jika kematian disebabkan bunuh diri dalam keadaan waras dalam 1 tahun dari tarikh pengeluaran."}
           </Text>
           <Text style={styles.bulletPoint}>
-            * Kematian akibat kemalangan yang berlaku secara langsung atau tidak
-            langsung disebabkan oleh mana-mana perkara berikut:
-          </Text>
-          <Text style={styles.bulletPoint}>
-            {" "}
-            a) Kematian atau kecederaan diri yang disengajakan, bunuh diri atau
-            cubaan membunuh diri, ketika waras;
+            {lan === "en"
+              ? "* Accidental death that occurs directly or indirectly due to any of the following:"
+              : "* Kematian akibat kemalangan yang berlaku secara langsung atau tidaklangsung disebabkan oleh mana-mana perkara  berikut:"}
           </Text>
           <Text style={styles.bulletPoint}>
             {" "}
-            b) Penyertaan dalam apa-apa perbuatan jenayah atau menyalahi
-            undang-undang, mogok, rusuhan, keganasan, atau kekecohan awam.
+            {"a)"}{" "}
+            {lan === "en"
+              ? "Intentional self-inflicted injury or death, suicide, or attempted suicide, while sane;"
+              : "Kematian atau kecederaan diri yang disengajakan, bunuh diri atau cubaan membunuh diri, ketika waras;"}
+          </Text>
+          <Text style={styles.bulletPoint}>
+            {" "}
+            {"b)"}{" "}
+            {lan === "en"
+              ? "Participation in any criminal or illegal act, strike, riot, terrorism or civil commotion."
+              : "Penyertaan dalam apa-apa perbuatan jenayah atau menyalahi undang-undang, mogok, rusuhan, keganasan, atau kekecohan awam."}
           </Text>
           <Text style={styles.noteText}>
-            <Text style={styles.bold}>Nota:</Text> Senarai ini adalah{" "}
-            <Text style={styles.bold}>tidak menyeluruh</Text>. Anda perlu
-            merujuk kepada sijil untuk senarai pengecualian yang lengkap.
+            <Text style={styles.bold}>{lan === "en" ? "Note:" : "Nota:"}</Text>{" "}
+            {lan === "en" ? "This list is " : "Senarai ini adalah"}{" "}
+            <Text style={styles.bold}>
+              {lan === "en" ? "non-exhaustive" : "tidak menyeluruh"}
+            </Text>
+            .{" "}
+            {lan === "en"
+              ? "You must refer to the certificate for the full list of exclusions"
+              : "Anda perlu merujuk kepada sijil untuk senarai pengecualian yang lengkap."}
           </Text>
         </View>
 
         <View style={styles.section}>
           <Text style={styles.contactTitle}>
-            Jika anda mempunyai sebarang soalan atau memerlukan bantuan mengenai
-            takaful keluarga anda, anda boleh:
+            {lan === "en"
+              ? "If you have any questions or require assistance on your family takaful, you can:"
+              : "Jika anda mempunyai sebarang soalan atau memerlukan bantuan mengenai takaful keluarga anda, anda boleh:"}
           </Text>
 
           <View style={styles.contactGrid}>
@@ -173,7 +231,8 @@ export const PdsDocument = ({ data }: { data: any }) => (
                 <Image src="/images/phoneIcon.png" style={styles.logoIcon} />
               </View>
               <Text style={styles.contactTextIcon}>
-                Hubungi kami di 1-300-13-8888 (Etiqa Online)
+                {lan === "en" ? "Contact us at" : "Hubungi kami di"}
+                1-300-13-8888 (Etiqa Online)
               </Text>
             </View>
 
@@ -183,7 +242,9 @@ export const PdsDocument = ({ data }: { data: any }) => (
                 <Image src="/images/web.png" style={styles.logoIcon} />
               </View>
               <Text style={styles.contactTextIcon}>
-                Lawati kami di laman web ini¹
+                {lan === "en"
+                  ? "Visit us at this website¹"
+                  : "Lawati kami di laman web ini¹"}
               </Text>
             </View>
 
@@ -193,7 +254,8 @@ export const PdsDocument = ({ data }: { data: any }) => (
                 <Image src="/images/mail.png" style={styles.logoIcon} />
               </View>
               <Text style={styles.contactTextIcon}>
-                E-mel kami di info@etiqa.com.my
+                {lan === "en" ? "Email us at " : "E-mel kami di "}
+                info@etiqa.com.my
               </Text>
             </View>
 
@@ -203,7 +265,9 @@ export const PdsDocument = ({ data }: { data: any }) => (
               <View style={styles.iconPlaceholder}>
                 <Image src="/images/qr.png" style={styles.logoIcon} />
               </View>
-              <Text style={styles.contactTextIcon}>Imbas kod QR</Text>
+              <Text style={styles.contactTextIcon}>
+                {lan === "en" ? "Scan the QR code" : "Imbas kod QR"}
+              </Text>
             </View>
           </View>
 
@@ -219,46 +283,72 @@ export const PdsDocument = ({ data }: { data: any }) => (
           <View style={styles.numberCircle}>
             <Text style={styles.numberCircleText}>3</Text>
           </View>
-          <Text style={styles.sectionTitle}>Ketahui Kewajipan Anda</Text>
+          <Text style={styles.sectionTitle}>
+            {lan === "en" ? "Know Your Obligations" : "Ketahui Kewajipan Anda"}
+          </Text>
         </View>
 
         <View style={styles.obligationBoxThree}>
           <Text style={styles.boxTitleThree}>
-            Untuk takaful keluarga anda, anda mesti membayar sumbangan sebanyak:
+            {lan === "en"
+              ? "For your family takaful, you must pay a contribution of:"
+              : "Untuk takaful keluarga anda, anda mesti membayar sumbangan sebanyak:"}
           </Text>
           <View style={styles.obligationRow}>
-            <Text style={styles.obligationLabel}>Sumbangan</Text>
+            <Text style={styles.obligationLabel}>
+              {lan === "en" ? "Contribution" : "Sumbangan"}
+            </Text>
             <Text style={styles.obligationValue}>
               <Text style={styles.bold}>RM{data.contribution.amount}</Text>{" "}
               {data.contribution.mode}
             </Text>
           </View>
           <Text style={styles.periodText}>
-            Tempoh: Sehingga umur {data.contribution.lastPayingAge} tahun.
+            {lan === "en"
+              ? "Duration: Until the age of "
+              : "Tempoh: Sehingga umur "}
+            {data.contribution.lastPayingAge}{" "}
+            {lan === "en" ? " years." : " tahun."}
           </Text>
 
           <Text style={styles.boxTitleThree}>
-            Anda juga perlu membayar fi dan caj berikut:
+            {lan === "en"
+              ? "You also have to pay the following fees and charges:"
+              : "Anda juga perlu membayar fi dan caj berikut:"}
           </Text>
 
           <View style={styles.feeRow}>
-            <Text style={styles.feeLabel}>Duti Setem</Text>
+            <Text style={styles.feeLabel}>
+              {lan === "en" ? "Stamp Duty" : "Duti Setem"}
+            </Text>
             <Text style={styles.feeValue}>
-              <Text style={styles.bold}>RM10</Text> akan dibayar oleh kami
+              <Text style={styles.bold}>RM10</Text>{" "}
+              {lan === "en" ? "paid by us." : "akan dibayar oleh kami."}
             </Text>
           </View>
 
           <View style={styles.feeRow}>
-            <Text style={styles.feeLabel}>Jumlah Fi Wakalah</Text>
+            <Text style={styles.feeLabel}>
+              {lan === "en" ? "Wakalah Fee" : "Jumlah Fi Wakalah"}
+            </Text>
             <Text style={styles.feeValue}>
-              25% daripada jumlah sumbangan atau{" "}
+              25%
+              {lan === "en"
+                ? " of total contribution or "
+                : " daripada jumlah sumbangan atau "}
               <Text style={styles.bold}>RM {data.fees.wakalah}</Text>
             </Text>
           </View>
 
           <View style={styles.feeRowLast}>
-            <Text style={styles.feeLabel}>Caj-caj Lain Yang Dikenakan</Text>
-            <Text style={styles.feeValue}>Tidak berkenaan</Text>
+            <Text style={styles.feeLabel}>
+              {lan === "en"
+                ? "Other Applicable Charges"
+                : "Caj-caj Lain Yang Dikenakan"}
+            </Text>
+            <Text style={styles.feeValue}>
+              {lan === "en" ? "Not applicable" : "Tidak berkenaan"}
+            </Text>
           </View>
         </View>
       </View>

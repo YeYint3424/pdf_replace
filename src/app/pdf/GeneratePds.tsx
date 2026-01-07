@@ -33,10 +33,11 @@ const pdsData = {
   },
 };
 
-export default function GeneratePds() {
+export default function GeneratePds({lan}: {lan: string}) {
   return (
     <PDFViewer width="100%" height="1000">
       <PdsDocument
+        lan={lan}
         data={pdsData}
         // issueDate="05/01/2026"
         // contributionAmount="12.90"

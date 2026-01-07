@@ -1,5 +1,8 @@
+"use client";
+import { useState } from "react";
 import GeneratePds from "./GeneratePds";
 
 export default function PdfPage() {
-  return <GeneratePds />;
+  const [lan, setLan] = useState("en");
+  return <GeneratePds lan={lan} />;
 }
